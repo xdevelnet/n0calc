@@ -12,7 +12,6 @@ add_definitions(${GTK3_CFLAGS_OTHER})
 set(SOURCE_FILES
     main.c buttons.h)
 
-add_executable(gtk3hllwrld ${SOURCE_FILES})
+add_executable(n0calc ${SOURCE_FILES})
 
-
-target_link_libraries(gtk3hllwrld ${GTK3_LIBRARIES})
+target_link_libraries(n0calc ${GTK3_LIBRARIES} m)
