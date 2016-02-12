@@ -16,6 +16,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
+
 #include <math.h>
 #include <gtk/gtk.h>
 #include <string.h>
@@ -206,7 +207,7 @@ static void button_exec (GtkWidget *widget, unsigned char *action_num) {
 			validate_and_calc();
 			break;
 		case BUTTON_INFO:
-			gtk_text_buffer_insert_at_cursor(buffer, "github.com/xdevelnet", -1);
+			gtk_text_buffer_set_text(buffer, "github.com/xdevelnet", -1);
 			break;
 		default: g_printerr("%d", *action_num);
 	}

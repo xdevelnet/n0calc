@@ -14,7 +14,7 @@ Digital keyboard is supported. Wrong and incompatiable expressions are handled w
 
 # How to build
 
-### 1) Build with cmake
+### 1) Build via cmake
 
 Download & install development gtk3 packages using OS package manager.
 Download latest (at least 3.2) cmake release. cd to downloaded repository. Then:
