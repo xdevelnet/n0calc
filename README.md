@@ -35,11 +35,11 @@ $ gcc `pkg-config --cflags gtk+-3.0` -o n0calc main.c `pkg-config --libs gtk+-3.
 
 # F.A.Q.
 
-Q: There is no expression parser. Impossible to use more complicated expressions than operand1*operand2.
+**Q**: There is no expression parser. Impossible to use more complicated expressions than operand1*operand2.
 
-A: Check out bold text at the top of README.md
+**A**: Check out bold text at the top of README.md
 
 
-Q: You probably should split calculating logic, parsing, showing result to interface to 3 different functions. Huh?
+**Q**: You probably should split calculating logic, parsing, showing result to interface to 3 different functions. Huh?
 
-A: No need to do that just because I wasn't planning to do full featured calculator. Because there is already thousands of calculators. No need to write 1 more. Again, read bold text above.
+**A**: No need to do that just because I wasn't planning to do full featured calculator. Because there is already thousands of calculators. No need to write 1 more. Again, read bold text above.
