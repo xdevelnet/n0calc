@@ -1,6 +1,6 @@
 /*
  * n0calc - simple GTK3 calculator
- * 
+ *
  * Copyright (C) 2016  xdevelnet (xdevelnet at xdevelnet dot org)
  *
  * This program is free software: you can redistribute it and/or modify
@@ -24,6 +24,8 @@
 #include <iso646.h>
 #include <ctype.h>
 #include <stdlib.h>
+
+#define FLOAT_TEXT_WIDTH 31
 
 GtkWidget *textview;
 GtkTextBuffer *buffer;
@@ -72,7 +74,8 @@ static void validate_and_calc() {
 	}
 	if (!isdigit(operator[1]) or !isdigit(operator[-1])) {
 		char malformed_expression_at_operator[] = {"Malformed expression at 1 operator!"};
-		malformed_expression_at_operator[24] = *operator;
+		malformed_expression_at_operator[24] = *operator; ///24 means '1' symbol above. I probably can use strchr()
+		//here, but IDK why I need to do that at (almost) constant string.
 		gtk_text_buffer_set_text(buffer, malformed_expression_at_operator, -1);
 		return;
 	}
@@ -128,9 +131,9 @@ static void validate_and_calc() {
 			return;
 	}
 
-	char result_str[31]; //float precision width. I don't even know any reason to increase it.
-	memset(result_str, 0, 31);
-	snprintf(result_str, 30, "%g", result);
+	char result_str[FLOAT_TEXT_WIDTH]; //float precision width. I don't even know any reason to increase it.
+	memset(result_str, 0, FLOAT_TEXT_WIDTH);
+	snprintf(result_str, FLOAT_TEXT_WIDTH, "%g", result);
 	gtk_text_buffer_set_text(buffer, result_str, (gint) strlen(result_str));
 }
 
