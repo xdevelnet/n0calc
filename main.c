@@ -122,7 +122,7 @@ static void validate_and_calc() {
 			result = operand1 + operand2;
 			break;
 		case '-':
-			result = operand1 + operand2;
+			result = operand1 - operand2;
 			break;
 		default:
 			return;
